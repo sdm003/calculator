@@ -21,9 +21,9 @@ public class Program {
             Scanner scanner = new Scanner(System.in);
 
             String operation = scanner.next();
+            String result = calculator(operation);
 
-            calculator(operation);
-
+            System.out.println(result);
             System.out.println("Еще одна операция? true/false");
 
             isNextOperation = scanner.nextBoolean();
@@ -32,6 +32,7 @@ public class Program {
 
     public static String calculator(String opertion) {
 
+        opertion = opertion.replaceAll("\\s+","");
         String[] parts = opertion.split("[+-/*]");
         String operators[] = opertion.split("[a-zA-Z0-9]+");
         String result = null;
